@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    position: fixed;
+    top: 0;
+    height: 6rem;
+    width: 100vw;
+    background-color: #037BE6;
+    z-index: 5;
+    padding: 0 5rem;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.logo {
+    max-width: 33rem;
+    
+}
+
+.navigation {
+    flex: 2;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+}
+
+.links li {
+    padding: 1rem;
+}
+
+.jobPost {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.postJobBtn {
+    text-decoration: none;
+    padding: 13px 29px;
+    background: #00D363;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.postJobBtn:hover {
+    cursor: pointer;
+    background-color:white;
+    color:#00D363;
+    border: 2px solid #00D363;
+    box-sizing: border-box;
+}
+.loginBtn {
+    margin: 0 30px 0 0;
+    text-decoration: none;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 2rem;
+    }
+
+    
+}
+@media screen and (max-width:1140px) {
+    .navigation{
+        display: none;
+    }
+    .jobPost {
+        display: none;
+    }
+}

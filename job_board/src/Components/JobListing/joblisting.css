@@ -1,0 +1,202 @@
+/* Main Container */
+.joblistingContainer {
+    height: auto;
+    width: 100%;
+    padding: 0px 0px;
+    background-color:#F5F7FA;
+    display: grid;
+    place-items: center;
+}
+
+/* Inner Container */
+.J-container {
+    width: 70%;
+    background: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+   
+   
+}
+
+/* Job Heading */
+.jobHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.jobHeading h3 {
+    color: #001d38;
+    font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.jobHeadingBtn {
+    text-align: end;
+}
+
+.jobHeadingBtn-a {
+    text-decoration: none;
+    padding: 11px 29px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    color: #00D363;
+    border: 2px solid #00d36280;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.jobHeadingBtn-a:hover {
+    background-color: #00d363;
+    color: white;
+    border-color: #00d363;
+}
+
+/* Job Section */
+.job {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color:white;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0px 0px 12px;
+}
+
+.jobleft, .jobright {
+    flex: 1;
+    padding: 10px;
+}
+
+.jobleft {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.jobLogo {
+    padding: 15px;
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #212529;
+    margin-right: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.jobleftInfo {  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#jname {
+    font-size: 24px;
+    font-weight: 400;
+    margin:0px 0px 10px;
+    color: #191d34;
+}
+.location-logo{
+    margin-right: 10px;
+}
+.jobleft p {
+    font-size: 16px;
+    margin: 0px;
+    color: #AAB1B7;
+    
+}
+
+.jobright {
+    width: auto;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+
+.Jlinks {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Jlinks p {
+    color: #aab1b7;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.heart {
+    color: #00D363;
+    background: #e6fdf0;
+    margin: 0px 15px 0px 0px;
+    padding:9px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.applyBtn {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    padding: 9px 27px;
+    background: #00D363;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+.applyBtn:hover {
+    background-color: transparent;
+    color: #00D363;
+    border: 2px solid #00D363;
+}
+
+
+@media (max-width: 768px) {
+    .J-container {
+        width: 100%;
+    }
+
+    .job {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .jobleft, .jobright {
+        width: 100%;
+    }
+
+    .jobHeading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media screen and (max-width:775px) {
+    .jobright{
+        justify-content: flex-start;
+    }
+    .jobHeading {
+        height: auto;
+    }
+    .jobHeadingBtn {
+        margin-top: 25px;
+    }
+}
