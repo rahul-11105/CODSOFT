@@ -9,26 +9,26 @@ const FeaturedCandidates = () => {
       <div className='candidatesList'>
         <div className='candidate'>
             <img src="/source/candidate.png" alt="img" />
-            <h4>candidate Name</h4>
-            <p>info</p>
+            <h4>Serenity Miller</h4>
+            <p>Software Engineer</p>
         </div>
 
         <div className='candidate'>
-            <img src="/source/candidate.png" alt="img" />
-            <h4>candidate Name</h4>
-            <p>info</p>
+            <img src="/source/candidate2.png" alt="img" />
+            <h4>jack Williams</h4>
+            <p>Software Engineer</p>
         </div>
 
         <div className='candidate'>
-            <img src="/source/candidate.png" alt="img" />
-            <h4>candidate Name</h4>
-            <p>info</p>
+            <img src="/source/candidate3.png" alt="img" />
+            <h4>Jordern Smith</h4>
+            <p>Software Engineer</p>
         </div>
 
         <div className='candidate'>
-            <img src="/source/candidate.png" alt="img" />
-            <h4>candidate Name</h4>
-            <p>info</p>
+            <img src="/source/candidate4.png" alt="img" />
+            <h4>Markery Jonden</h4>
+            <p>Software Engineer</p>
         </div>
 
         

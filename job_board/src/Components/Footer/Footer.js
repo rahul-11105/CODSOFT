@@ -45,7 +45,7 @@ export default function Footer() {
             
         </div>
         <div className='copyright'>
-                    <p>Copyright ©2025 All rights reserved | This template is made with <span className='f-heart'>&#9829;</span>  by Rahul_Lokhande</p>
+                    <p>Copyright ©2025 All rights reserved | This template is made with <span className='f-heart'>&#9829;</span>  by <p id='my-name'>Rahul_Lokhande</p></p>
         </div>
     </>
     

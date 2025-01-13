@@ -5,16 +5,19 @@ import PopulerCategory from './Components/PopulerCategory/PopulerCategory';
 import JobListing from './Components/JobListing/JobListing';
 import FeaturedCandidates from './Components/FeaturedCandidates/FeaturedCandidates';
 import Footer from './Components/Footer/Footer';
+import Contact from './Components/Contact/Contact';
 
 function App() {
   return (
     <>
-    <Main/>
+    {/*<Main/>
     <Category/>
     <PopulerCategory/>
     <JobListing/>
     <FeaturedCandidates/>
     <Footer/>
+    */}
+    <Contact/>
     </>
   );
 }

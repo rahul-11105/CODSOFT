@@ -43,11 +43,11 @@
 
 }
 .singleCategory:hover {
-    border: 2px solid rgba(16, 216, 16, 0.4);
+    border: 2px solid #00D363;
 }
 
 .singleCategory:hover h4 a {
-    color: rgba(16, 216, 16, 0.4);
+    color: #00D363;
     text-decoration: underline;
 }
 
@@ -58,6 +58,7 @@
     font-size: 20px;
     font-weight: 400;
     text-decoration: none;
+    transition: all 0.5s;
 }
 .singleCategory p {
     color: #AAB1B7;

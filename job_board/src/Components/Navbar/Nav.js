@@ -13,8 +13,6 @@ const Nav = () => {
           <ul className='links'>
           <li>Home</li>
           <li>Brows Jobs</li>
-          <li>Pages</li>
-          <li>blogs</li>
           <li>Contact</li>
           </ul>
       </div>
