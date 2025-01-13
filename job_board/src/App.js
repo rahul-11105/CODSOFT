@@ -6,18 +6,18 @@ import JobListing from './Components/JobListing/JobListing';
 import FeaturedCandidates from './Components/FeaturedCandidates/FeaturedCandidates';
 import Footer from './Components/Footer/Footer';
 import Contact from './Components/Contact/Contact';
+import BrowsJobs from './Components/BrowsJobs/BrowsJobs';
 
 function App() {
   return (
     <>
-    {/*<Main/>
+    <Main/>
     <Category/>
     <PopulerCategory/>
     <JobListing/>
     <FeaturedCandidates/>
     <Footer/>
-    */}
-    <Contact/>
+    
     </>
   );
 }
