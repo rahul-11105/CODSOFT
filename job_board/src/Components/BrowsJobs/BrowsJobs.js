@@ -178,7 +178,7 @@ const BrowsJobs=()=>{
         <section className="j-container">
             <Nav/>
             <div className='contact'>
-                <h3>4000+ Jobs Available</h3>
+                <h3>{jobs.length>=500?"500+":jobs.length} Jobs Available</h3>
             </div>
             <div className="jobs-container">
                 <div className="J-filter">
@@ -279,10 +279,18 @@ const BrowsJobs=()=>{
                             </div>
                     </div>
 
+                    <div className="j-btns">
+                            <button className="j-prevbtn" onClick={()=>{
+                            setCount(count-4);
+                            }}><i class="fa-solid fa-chevron-left"></i>
+                            </button>
 
-                <button onClick={()=>{
-                    setCount(count+4);
-                }}>next</button>
+                            <button className="j-nextbtn" onClick={()=>{
+                                setCount(count+4);
+                            }}><i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                    </div>
+                
 
                 </div>
             </div>

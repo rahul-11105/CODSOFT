@@ -8,16 +8,33 @@ import Footer from './Components/Footer/Footer';
 import Contact from './Components/Contact/Contact';
 import BrowsJobs from './Components/BrowsJobs/BrowsJobs';
 
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Login from "./Components/Login&signup/UserLogin";
+
 function App() {
   return (
     <>
-    <Main/>
-    <Category/>
-    <PopulerCategory/>
-    <JobListing/>
-    <FeaturedCandidates/>
-    <Footer/>
-    
+    <Router>
+      <Routes>
+
+        <Route path="/" element={
+          <>
+            <Main/>
+            <Category/>
+            <PopulerCategory/>
+            <JobListing/>
+            <FeaturedCandidates/>
+            <Footer/>
+          </>
+          } />
+
+          <Route path='/contact' element={<Contact/>}/>
+          <Route path='/jobs' element={<BrowsJobs/>}/>
+          <Route path='/login' element={<Login/>}/>
+
+      </Routes>
+    </Router>
+
     </>
   );
 }
