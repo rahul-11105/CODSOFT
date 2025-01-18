@@ -24,10 +24,11 @@ connect("mongodb://127.0.0.1:27017/job_portal")
     console.log("err occured during connection of DB");
 })
 //routes;
-app.get('/',(req,res)=>{
-    const user1 = new user({name:"rahul",email:"rahullokhande11105@gmail.com",password:"1234"});
-    user1.save();
-    res.send("<h1> hello </h1>");
+app.post('/signup',(req,res)=>{
+   // const user1 = new user({name:"rahul",email:"rahullokhande11105@gmail.com",password:"1234"});
+    //user1.save();
+    console.log("new user found");
+    res.send("ok");
 });
 
 app.listen(port,()=>{

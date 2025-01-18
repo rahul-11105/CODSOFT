@@ -10,6 +10,7 @@ import BrowsJobs from './Components/BrowsJobs/BrowsJobs';
 
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Login from "./Components/Login&signup/UserLogin";
+import SignUp from './Components/Login&signup/SignUp';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/jobs' element={<BrowsJobs/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/signup' element={<SignUp/>}/>
 
       </Routes>
     </Router>

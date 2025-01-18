@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import "./userlogin.css";
 import Nav from '../Navbar/Nav';
+import SignUp from './SignUp';
+import { Link,useNavigate } from 'react-router-dom';
+
 
 function UserLogin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -31,6 +35,7 @@ function UserLogin() {
       console.log('Backend response:', data);
 
       if (response.ok) {
+        navigate("/");
         console.log('Login successful');
       } else {
         console.log('Login failed');
@@ -39,12 +44,12 @@ function UserLogin() {
       console.error('Error during login:', error);
     }
   };
-
+ 
   return (
     <section className='login-section'>
       <Nav />
       <div className='loginContainer'>
-        <h3>Login</h3>
+        <h3 className='login-h3'>Login</h3>
         <form className='L-form' onSubmit={handleSubmit}>
           <input
             required
@@ -66,7 +71,7 @@ function UserLogin() {
         </form>
         <div className='links-container'>
           <a href='/forgot-password' className='link'>Forgot Password?</a>
-          <a href='/signup' className='link'>Sign Up</a>
+          <Link className='link' to="/signup">Sign UP</Link>
         </div>
       </div>
     </section>
