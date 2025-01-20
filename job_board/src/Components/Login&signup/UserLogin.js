@@ -23,22 +23,29 @@ function UserLogin() {
     const loginData = { username, password };
 
     try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch('http://localhost:8080/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(loginData),
+        credentials:'include',
       });
 
-      const data = await response.json();
+      const data = response;
       console.log('Backend response:', data);
 
       if (response.ok) {
         navigate("/");
         console.log('Login successful');
-      } else {
-        console.log('Login failed');
+      } 
+      else if(response.statusText == 'Unauthorized') {
+        alert('Unauthorized : invalid credintials');
+        const inp = document.querySelectorAll('.F-inp');
+        inp[0].value = null;
+        inp[1].value = null;
+        
+        console.log('invalid credintials');
       }
     } catch (error) {
       console.error('Error during login:', error);
