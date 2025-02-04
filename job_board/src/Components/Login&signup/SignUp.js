@@ -36,20 +36,18 @@ function SignUp() {
         credentials:'include',
       });
 
-      const data = response;
-      console.log('Backend response:', data);
+      const data = await response.json();
 
-      if (response.ok) {
-        Navigate("/");
-        alert('Account created successfully!');
-      } else {
-        console.log('Signup failed');
-        alert(data.message || 'Failed to create an account');
-      }
+            if (response.ok) {
+                alert('Account created successfully!');
+                Navigate("/");
+            } else {
+                alert(data.message);
+            }
     } catch (error) {
       console.error('Error during signup:', error);
     }
-  };
+  }; 
 
   return (
     <section className='signup-section'>

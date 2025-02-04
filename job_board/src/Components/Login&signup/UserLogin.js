@@ -32,21 +32,29 @@ function UserLogin() {
         credentials:'include',
       });
 
-      const data = response;
-      console.log('Backend response:', data);
+      const data = await response.json(); // Use await to resolve the promise
+      console.log('Backend response:', data.message);
+      if(data.message == "Invalid UserName"){
+        alert("UnAutherized: Invalid UserName");
+        setUsername('');
+        setPassword('');
+      }
+      else if(data.message == "Invalid Password"){
+        alert("UnAutherized: IInvalid Password");
+        setUsername('');
+        setPassword('');
+      }
+      else if(data.message == "nouid") {
+        alert("UnAoutherized : Please sign up first");
+        setUsername('');
+        setPassword('');
+      }
 
-      if (response.ok) {
+      else if(response.ok) {
         navigate("/");
         console.log('Login successful');
-      } 
-      else if(response.statusText == 'Unauthorized') {
-        alert('Unauthorized : invalid credintials');
-        const inp = document.querySelectorAll('.F-inp');
-        inp[0].value = null;
-        inp[1].value = null;
-        
-        console.log('invalid credintials');
       }
+      
     } catch (error) {
       console.error('Error during login:', error);
     }
@@ -86,3 +94,4 @@ function UserLogin() {
 }
 
 export default UserLogin;
+ 

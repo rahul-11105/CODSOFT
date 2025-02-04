@@ -33,23 +33,57 @@ connect("mongodb://127.0.0.1:27017/job_portal")
 
 //routes;
 
-app.post('/signup',(req,res)=>{
-    console.log(req.body);
-    const {username,email,password} = req.body;
-    const token = setuser(req.body);
-    console.log(token);
-    const user1 = new user({name:username,email:email,password:password});
-    user1.save();
-    console.log("new user found");
-    res.cookie('uid',token,
-        {
-            httpOnly: true, // Makes the cookie inaccessible to JavaScript on the client-side
-            secure: false,  // Set to true if using HTTPS (not necessary for localhost without HTTPS)
-            sameSite: 'Strict', // Helps in cross-origin requests
+app.post('/signup', async (req, res) => {
+    try {
+        const { username, email, password } = req.body;
+
+        
+        const userExists = await user.findOne({ name: username });
+        if (userExists) {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Username is already taken' 
+            });
         }
-    );
-    res.send("ok");
+
+        // Check if email already exists
+        const userEmailExists = await user.findOne({ email: email });
+        if (userEmailExists) {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Email is already in use' 
+            });
+        }
+
+        // Create new user (password is stored as plain text, not recommended)
+        const newUser = new user({ 
+            name: username, 
+            email: email, 
+            password: password 
+        });
+        await newUser.save();
+
+        // Generate a token (placeholder function; replace with your logic)
+        const token = setuser(req.body);
+
+        // Set cookie
+        res.cookie('uid', token, {
+            httpOnly: true,
+            secure: false, // Use true in production with HTTPS
+            sameSite: 'Strict',
+        });
+
+        console.log("New user registered successfully");
+        return res.status(201).json({ success: true, message: 'User registered successfully' });
+    } catch (error) {
+        console.error("Error during signup:", error);
+        return res.status(500).json({ 
+            success: false, 
+            message: 'Internal server error' 
+        });
+    }
 });
+
 
 app.post('/login',async (req,res)=>{
     //console.log(req.body);
@@ -59,26 +93,41 @@ app.post('/login',async (req,res)=>{
         const uid = getuser(req.cookies.uid);
         console.log(uid);
         const existinguser = await user.findOne({name:uid.name});
-        if (!existinguser) {
-            console.log("user not found");
-            return res.status(404).send("User not found");
+        if(!existinguser) {
+            return res.json({
+                message:"Invalid UserName",
+            });
+        }
+        else if(existinguser != uid.name){
+            return res.json({
+                message:"Invalid UserName",
+            });
         }
         const isPasswordValid = existinguser.password;
         if (!isPasswordValid) {
-            console.log("pass not mached");
-            return res.status(401).send("Invalid credentials");
+            return res.json({
+                message:"Invalid Password",
+            });
         }
         else if(isPasswordValid != password){
             console.log("pass galat be");
-            return res.status(401).send("Invalid credentials");
+            return res.json({
+                message:"Invalid Password",
+            });
         }
         console.log(uid);
     }
     catch(err){
         console.log("uid not found",err);
+        return res.json({
+            success: false, 
+            message:'nouid' 
+        });
     }
     
-    res.send('ok');
+    res.json({
+        ok:"true",
+    });
 });
 
 app.listen(port,()=>{

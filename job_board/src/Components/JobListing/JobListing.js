@@ -1,6 +1,6 @@
 import React from 'react';
 import "./joblisting.css";
-
+import { Link } from 'react-router-dom';
 const JobListing = () => {
 
   const jobs_4 =[
@@ -175,9 +175,7 @@ const JobListing = () => {
         <div className="jobHeading">
           <h3>Job Listing:</h3>
           <div className="jobHeadingBtn">
-            <a className="jobHeadingBtn-a" href="#">
-              Browse More Jobs
-            </a>
+            <Link className="jobHeadingBtn-a" to={'/jobs'}>Brows more Jobs</Link>
           </div>
         </div>
 

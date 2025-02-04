@@ -19,7 +19,6 @@ const Nav = () => {
       </div>
       <div className='jobPost'>
       <Link className='loginBtn' to="/login">Login</Link>
-      <a href="#" className='postJobBtn'>Post A Job</a>
       </div>
     </nav>
     </>
