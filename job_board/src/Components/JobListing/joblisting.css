@@ -82,7 +82,7 @@
 .jobleft {
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 50%; 
     border-radius: 5px;
 }
 
@@ -213,4 +213,13 @@
     .jobHeadingBtn {
         margin-top: 25px;
     }
+}
+@media screen and (max-width:470px) {
+    .jobHeading h3{
+        font-size: 25px;
+    }
+    .jobHeading{
+        padding-left: 10%;
+    }
+    
 }

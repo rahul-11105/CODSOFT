@@ -85,7 +85,7 @@ function UserLogin() {
           <button className='F-btn' type="submit">Login</button>
         </form>
         <div className='links-container'>
-          <a href='/forgot-password' className='link'>Forgot Password?</a>
+          <Link className='link' to="/forgot-password">Forgot Password?</Link>
           <Link className='link' to="/signup">Sign UP</Link>
         </div>
       </div>

@@ -32,7 +32,34 @@ connect("mongodb://127.0.0.1:27017/job_portal")
 
 
 //routes;
-
+app.get('/logout',(req,res)=>{
+    if(req.cookies.uid){ 
+        //console.log(req.cookies.uid);
+        res.clearCookie('uid');
+        //console.log(req.cookies.uid2);
+        return res.json({
+            message:"ok",
+        });
+    }
+    else {
+        return res.json({
+            message:'not ok',
+        });
+    }
+});
+app.post('/checkAuth',(req,res)=>{
+    if(req.cookies.uid) {
+        return res.json({
+            message:'ok',
+        })
+    }
+    else { 
+        return res.json({
+            message:'not ok',
+        })
+    }
+    
+}) 
 app.post('/signup', async (req, res) => {
     try {
         const { username, email, password } = req.body;
@@ -63,13 +90,12 @@ app.post('/signup', async (req, res) => {
         });
         await newUser.save();
 
-        // Generate a token (placeholder function; replace with your logic)
         const token = setuser(req.body);
 
         // Set cookie
         res.cookie('uid', token, {
             httpOnly: true,
-            secure: false, // Use true in production with HTTPS
+            secure: false, 
             sameSite: 'Strict',
         });
 
@@ -88,42 +114,42 @@ app.post('/signup', async (req, res) => {
 app.post('/login',async (req,res)=>{
     //console.log(req.body);
     const {username,password} = req.body;
-    
-    try{
-        const uid = getuser(req.cookies.uid);
-        console.log(uid);
-        const existinguser = await user.findOne({name:uid.name});
-        if(!existinguser) {
+        try{
+            const uid = getuser(req.cookies.uid);
+            console.log(uid);
+            console.log("uid is present");
+            let existinguser = await user.findOne({name:uid.name});
+            if(!existinguser) {
+                return res.json({
+                    message:"Invalid UserName",
+                });
+            }
+            else if(username != uid.name){
+                return res.json({
+                    message:"Invalid UserName",
+                });
+            }
+            const isPasswordValid = existinguser.password;
+            if (!isPasswordValid) {
+                return res.json({
+                    message:"Invalid Password",
+                });
+            }
+            else if(isPasswordValid != password){
+                console.log("pass galat be");
+                return res.json({
+                    message:"Invalid Password",
+                });
+            }
+            console.log(uid);
+        }
+        catch(err){
+            console.log("uid not found",err);
             return res.json({
-                message:"Invalid UserName",
+                success: false, 
+                message:'nouid' 
             });
         }
-        else if(existinguser != uid.name){
-            return res.json({
-                message:"Invalid UserName",
-            });
-        }
-        const isPasswordValid = existinguser.password;
-        if (!isPasswordValid) {
-            return res.json({
-                message:"Invalid Password",
-            });
-        }
-        else if(isPasswordValid != password){
-            console.log("pass galat be");
-            return res.json({
-                message:"Invalid Password",
-            });
-        }
-        console.log(uid);
-    }
-    catch(err){
-        console.log("uid not found",err);
-        return res.json({
-            success: false, 
-            message:'nouid' 
-        });
-    }
     
     res.json({
         ok:"true",

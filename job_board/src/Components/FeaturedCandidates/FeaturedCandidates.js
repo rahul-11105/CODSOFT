@@ -12,11 +12,11 @@ const FeaturedCandidates = () => {
             <h4>Serenity Miller</h4>
             <p>Software Engineer</p>
         </div>
-
+ 
         <div className='candidate'>
-            <img src="/source/candidate2.png" alt="img" />
-            <h4>jack Williams</h4>
-            <p>Software Engineer</p>
+            <img className="me" src="/source/My photo-modified.png" alt="img" />
+            <h4>Rahul Lokhande</h4>
+            <p>Full Stack Developer</p>
         </div>
 
         <div className='candidate'>

@@ -84,6 +84,29 @@
         width: 100vw;
     }
 }
+@media screen and (max-width:470px){
+    .mainArea{
+        height: 24rem;
+        width: 100%;
+    }
+    .headerArea {
+        height:400px;
+    }
+    .headerTxt{
+        top:100px;
+        left:20px;
+    }
+    .headerTxt #jobslisted{
+        font-size: 25px;
+
+    }
+    .headerTxt h3{
+        font-size: 45px;
+    }
+    .headerTxt p{
+        font-size: 12px;
+    }
+}
 @media screen and (max-width:1459px) {
     .headerTxt p{
         color: rgba(0, 0, 0, 0.537);

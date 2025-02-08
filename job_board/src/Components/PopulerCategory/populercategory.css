@@ -88,3 +88,36 @@
       
     }
 }
+@media screen and (max-width:470px) {
+    
+    .populerCategory{
+        padding: 10px 0px 0px 10%;
+        width: 90%;
+        align-items: start;
+        
+    }
+    .populerCategoryHeading{
+        height:auto;
+        width:100%;
+        margin: 0px 0px 10px 0px;
+        
+    }
+    
+    .populerCategoryHeading h3{
+        font-size:25px;
+        font-weight: 400;
+    }
+    .populerCategoriesInfo {
+        height: auto;
+        width:85%;
+    }
+    .singleCategory{
+        padding: 19px 28px;
+        flex-grow: 1;
+        background-color:white;
+        border-radius: 5px;
+        display: inline-block;
+        transition: all 0.5s;
+    
+    }
+}

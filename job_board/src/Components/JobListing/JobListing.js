@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect,useContext} from 'react';
 import "./joblisting.css";
 import { Link } from 'react-router-dom';
+import UserContext from '../Context/UserContext';
 const JobListing = () => {
 
   const jobs_4 =[
@@ -169,13 +170,18 @@ const JobListing = () => {
     },
 
 ];
-  return (
+const {checkAuth,Auth} = useContext(UserContext);
+useEffect(() => {
+  checkAuth();
+}, []);
+
+  return ( 
     <div className="joblistingContainer">
       <div className="J-container">
         <div className="jobHeading">
           <h3>Job Listing:</h3>
           <div className="jobHeadingBtn">
-            <Link className="jobHeadingBtn-a" to={'/jobs'}>Brows more Jobs</Link>
+            <Link className="jobHeadingBtn-a" to={Auth?'/jobs':'/signup'}>Brows more Jobs</Link>
           </div>
         </div>
 

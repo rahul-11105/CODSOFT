@@ -11,6 +11,7 @@ import BrowsJobs from './Components/BrowsJobs/BrowsJobs';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Login from "./Components/Login&signup/UserLogin";
 import SignUp from './Components/Login&signup/SignUp';
+import ForgotPassword from './Components/Forgot_pss/Forgot_password';
 
 function App() {
   return (
@@ -33,7 +34,8 @@ function App() {
           <Route path='/jobs' element={<BrowsJobs/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<SignUp/>}/>
-
+          <Route path='/forgot-password' element={<ForgotPassword/>}/>
+          
       </Routes>
     </Router>
 

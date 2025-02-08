@@ -7,7 +7,7 @@ export default function Footer() {
         <div className='footer'>
             <div className='footerContainer'>
                 <div className='f1'>
-                    <img src="/source/logo.png" alt="logo" />
+                    <img id='F-img' src="/source/logo.png" alt="logo" />
                     <p>rahullokhande11105@gmail.com</p>
                     <p>+91 7499916161</p>
                     <div className='F-icon'>
@@ -18,7 +18,7 @@ export default function Footer() {
                         
                     </div>
                 </div>
-                <div className='f1'>
+                <div id='category' className='f1'>
                         <h3 className='f1-heading'>Category</h3>
                         <ul className='f1-list'>
                         <li>Design & Art</li>
@@ -47,7 +47,7 @@ export default function Footer() {
         <div className='copyright'>
                     <p>Copyright ©2025 All rights reserved | This template is made with <span className='f-heart'>&#9829;</span>  by <p id='my-name'>Rahul_Lokhande</p></p>
         </div>
-    </>
+    </> 
     
   )
 }

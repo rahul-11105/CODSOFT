@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "copy-descriptor": "^0.1.1",
     "cra-template": "1.2.0",
+    "ee-first": "^1.1.1",
+    "emailjs": "^4.0.3",
+    "emailjs-com": "^3.2.0",
     "http-proxy-middleware": "^3.0.3",
+    "js-cookie": "^3.0.5",
+    "mimic-fn": "^5.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.1",
-    "react-scripts": "5.0.1"
+    "react-router-dom": "^7.1.5",
+    "react-script": "^2.0.5",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

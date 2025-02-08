@@ -121,6 +121,47 @@
     padding-right: 10px;
     color: rgb(141, 141, 141);
 }
+@media screen and (max-width:770px) {
+    .contact-right {
+        height:auto;
+        width:auto;
+    }
+    .contact-right p{
+        font-size:1rem;
+    }
+    .contact-right h3 {
+
+        font-size:1.2rem;
+    }
+    .i{
+        font-size:20px;
+    }
+}
+@media screen and (max-width:470px){
+        .contact-right p{
+            font-size:0.75rem;
+        }
+        .contact-right h3 {
+
+            font-size:1rem;
+        }
+        .i{
+            font-size:15px;
+        }
+        .map{
+            display: none;
+        }
+        .contact-map{
+           padding: 0px 0px 10px 0px;
+           margin: 0px;
+        }
+        .contact-div{
+            margin-top: 0px;
+        }
+        .textArea{
+            height: 10px;
+        }
+}
 @media screen and (max-width:950px) {
     .inp-feilds textarea {
         width: 140%;
