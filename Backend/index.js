@@ -12,8 +12,8 @@ const {setuser, getuser} = require("./Authenticate/userAuth");
 app.use(express.json());
 app.use(cors(
     {
-        origin: 'http://localhost:3000', // React app URL
-        credentials: true, // Allow cookies to be sent with requests
+        origin: 'http://localhost:3000', 
+        credentials: true,
     }
 ));
 app.use(express.urlencoded({extended:true}));
@@ -73,7 +73,7 @@ app.post('/signup', async (req, res) => {
             });
         }
 
-        // Check if email already exists
+        // Checking if email already exists
         const userEmailExists = await user.findOne({ email: email });
         if (userEmailExists) {
             return res.status(400).json({ 
@@ -82,7 +82,7 @@ app.post('/signup', async (req, res) => {
             });
         }
 
-        // Create new user (password is stored as plain text, not recommended)
+        // Creating new user (password is stored as plain text, not recommended)
         const newUser = new user({ 
             name: username, 
             email: email, 
@@ -92,7 +92,7 @@ app.post('/signup', async (req, res) => {
 
         const token = setuser(req.body);
 
-        // Set cookie
+        // Setting cookie
         res.cookie('uid', token, {
             httpOnly: true,
             secure: false, 

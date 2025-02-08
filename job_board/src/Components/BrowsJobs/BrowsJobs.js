@@ -44,7 +44,7 @@ const BrowsJobs = () => {
     )
   }
 
-  // Filter jobs based on the formData (location, category)
+  // Filtering jobs based on the formData (location, category)
   const filteredJobs = jobs.filter((job) => {
     return (
       (formData.job_title ? job.role.toLowerCase().includes(formData.job_title.toLowerCase()) : true) &&
