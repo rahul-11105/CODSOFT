@@ -18,7 +18,6 @@ function App() {
     <>
     <Router>
       <Routes>
-
         <Route path="/" element={
           <>
             <Main/>
@@ -29,13 +28,11 @@ function App() {
             <Footer/>
           </>
           } />
-
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/jobs' element={<BrowsJobs/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<SignUp/>}/>
-          <Route path='/forgot-password' element={<ForgotPassword/>}/>
-          
+          <Route path='/forgot-password' element={<ForgotPassword/>}/> 
       </Routes>
     </Router>
 

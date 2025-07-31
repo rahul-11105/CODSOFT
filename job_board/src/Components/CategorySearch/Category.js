@@ -14,7 +14,7 @@ const Category = () => {
     e.preventDefault();
 
     const results = jobData.filter((job) =>
-      keywordValue ? job.role.toLowerCase().includes(keywordValue.toLowerCase()) : false
+      keywordValue ? job.title.toLowerCase().includes(keywordValue.toLowerCase()) : false
     );
 
     setFilteredData(results);
@@ -47,10 +47,10 @@ const Category = () => {
 
           <div className="populerSearch">
             <span className="populerSearchHeading">Popular Search :</span>
-            <a className="populerSearchopt" href="#">Web Development</a>
-            <a className="populerSearchopt" href="#">Marketing</a>
-            <a className="populerSearchopt" href="#">Development</a>
-            <a className="populerSearchopt" href="#">Teaching</a>
+            <p className="populerSearchopt" >Web Development</p>
+            <p className="populerSearchopt" >Marketing</p>
+            <p className="populerSearchopt" >Development</p>
+            <p className="populerSearchopt">Teaching</p>
           </div>
 
         {filteredData.length > 0 ? (

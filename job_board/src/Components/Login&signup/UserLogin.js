@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import "./userlogin.css";
 import Nav from '../Navbar/Nav';
-import SignUp from './SignUp';
 import { Link,useNavigate } from 'react-router-dom';
 
 
@@ -34,18 +33,18 @@ function UserLogin() {
 
       const data = await response.json(); // Use await to resolve the promise
       console.log('Backend response:', data.message);
-      if(data.message == "Invalid UserName"){
-        alert("UnAutherized: Invalid UserName");
+      if(data.message === "Invalid UserName"){
+        alert("401: UnAutherized: Invalid UserName");
         setUsername('');
         setPassword('');
       }
-      else if(data.message == "Invalid Password"){
-        alert("UnAutherized: IInvalid Password");
+      else if(data.message === "Invalid Password"){
+        alert("401: UnAutherized: IInvalid Password");
         setUsername('');
         setPassword('');
       }
-      else if(data.message == "nouid") {
-        alert("UnAoutherized : Please sign up first");
+      else if(data.message === "nouid") {
+        alert("401: UnAutherized : Please sign up first");
         setUsername('');
         setPassword('');
       }

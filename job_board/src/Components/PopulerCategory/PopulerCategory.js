@@ -10,35 +10,35 @@ const PopulerCategory = () => {
       </div>
       <div className='populerCategoriesInfo'>
         <div className='singleCategory'>
-                <h4><a href="#">Design & Creative</a></h4>
+                <h4><p>Design & Creative</p></h4>
                 <p><span>50</span>Available position</p>
         </div>
         <div className='singleCategory'>
-                <h4><a href="#">Marketinge</a></h4>
+                <h4><p>Marketinge</p></h4>
                 <p><span>50</span>Available position</p>
         </div>
         <div className='singleCategory'>
-                <h4><a href="#">Telemarketing</a></h4>
+                <h4><p>Telemarketing</p></h4>
                 <p><span>50</span>Available position</p>
         </div>
         <div className='singleCategory'>
-                <h4><a href="#">Software & Web</a></h4>
+                <h4><p>Software & Web</p></h4>
                 <p><span>50</span>Available position</p>
         </div>
         <div className='singleCategory'>
-                <h4><a href="#">Administration</a></h4>
+                <h4><p>Administration</p></h4>
                 <p><span>50</span>Available position</p>
         </div>
         <div className='singleCategory'>
-                <h4><a href="#">Teaching & Education</a></h4>
+                <h4><p>Teaching & Education</p></h4>
                 <p><span>50</span>Available position</p>
         </div>
         <div className='singleCategory'>
-                <h4><a href="#">Engineering</a></h4>
+                <h4><p >Engineering</p></h4>
                 <p><span>50</span>Available position</p>
         </div>
         <div className='singleCategory'>
-                <h4><a href="#">Garments / Textile</a></h4>
+                <h4><p>Garments / Textile</p></h4>
                 <p><span>50</span>Available position</p>
         </div>
         

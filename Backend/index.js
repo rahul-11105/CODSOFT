@@ -15,19 +15,21 @@ app.use(cors(
         origin: 'http://localhost:3000', 
         credentials: true,
     }
+
 ));
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
-
+ 
 //connection;
 const connect = require("./connection/connectToDB");
 const user = require("./Model/usermodel"); 
-connect("mongodb://127.0.0.1:27017/job_portal")
+connect("mongodb+srv://rahullokhande:rahul11105@cluster0.wngig4w.mongodb.net/job_portal")
 .then(()=>{
     console.log("DB connected Successfully");
 })
 .catch((err)=>{
     console.log("err occured during connection of DB");
+    console.log(err);
 });
 
 
@@ -136,7 +138,7 @@ app.post('/login',async (req,res)=>{
                 });
             }
             else if(isPasswordValid != password){
-                console.log("pass galat be");
+                console.log("Wrong pass..!!");
                 return res.json({
                     message:"Invalid Password",
                 });
@@ -144,18 +146,48 @@ app.post('/login',async (req,res)=>{
             console.log(uid);
         }
         catch(err){
-            console.log("uid not found",err);
-            return res.json({
-                success: false, 
-                message:'nouid' 
-            });
+            console.log("oopps! uid not found");
+
+            const Logeduser =  await user.findOne({name:username});
+            if(Logeduser == null){
+                return res.json({
+                    message:'nouid'
+                })
+            }
+            else if(Logeduser.name == username) {
+                if(password != Logeduser.password) {
+                    return res.json({
+                        success: false, 
+                        message:'Invalid Password' 
+                    });
+                }
+                else {
+                    const userinfo = {
+                        username:Logeduser.name,
+                        email:Logeduser.email,
+                        password:Logeduser.password
+                    }
+                    const token = setuser(userinfo);
+
+                    // Setting cookie
+                    res.cookie('uid', token, {
+                        httpOnly: true,
+                        secure: false, 
+                        sameSite: 'Strict',
+                    });
+
+                    return res.json({
+                        ok:"true",
+                    });
+                }
+            }            
+            
         }
-    
     res.json({
         ok:"true",
     });
 });
 
 app.listen(port,()=>{
-    console.log(`app is started at port ${port}`);
+    console.log(`server is started at port ${port}`);
 })

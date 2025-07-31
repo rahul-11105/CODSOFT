@@ -18,6 +18,7 @@ useEffect(()=>{
 const handleLogOut = async()=>{
   
   try {
+    if(window.confirm('logged out successfully')){
     const res = await fetch('http://localhost:8080/logout',{
       method:'get',
       credentials:'include',
@@ -25,13 +26,17 @@ const handleLogOut = async()=>{
     const data =await res.json();
     console.log(data);
     if(data.message === 'ok') {
-      alert('logged out successfully');
+     
       setAuth(false);
+     
+      
     }
     else {
       alert('an error occured while loged out');
     }
-  } catch (error) {
+  }
+ }
+  catch (error) {
     console.log(error);
   }
   

@@ -19,9 +19,20 @@ const BrowsJobs = () => {
 
 
 
-  useEffect(()=>{
+  useEffect(() => {
+    async function getJob() {
+      try {
+        const res = await fetch('https://api.joinrise.io/api/v1/jobs/public?page=1&limit=20&sort=desc&sortedBy=createdAt&jobLoc=');
+        const data = await res.json();
+        console.log(data.result.jobs);
+        setJobs(data.result.jobs);
+      } catch (err) {
+        console.error('Error fetching jobs:', err);
+      }
+    }
 
-  },[]);
+    getJob();
+  }, []);
   const handleSubmit = (e) => {
       e.preventDefault();
       setCount(0);
@@ -47,9 +58,8 @@ const BrowsJobs = () => {
   // Filtering jobs based on the formData (location, category)
   const filteredJobs = jobs.filter((job) => {
     return (
-      (formData.job_title ? job.role.toLowerCase().includes(formData.job_title.toLowerCase()) : true) &&
-      (formData.location ? (job.location?job.location.toLowerCase().includes(formData.location.toLowerCase()):false): true) &&
-      (formData.category ?(job.category?job.category.toLowerCase().includes(formData.category.toLowerCase()):false): true)
+      (formData.job_title ? job.title.toLowerCase().includes(formData.job_title.toLowerCase()) : true) &&
+      (formData.location ? (job.locationAddress?job.locationAddress.toLowerCase().includes(formData.location.toLowerCase()):false): true)
     );
   });
 
@@ -123,13 +133,13 @@ const BrowsJobs = () => {
               <div className="job" key={index}>
                 <div className="jobleft">
                   <div className="jobLogo">
-                    <img src="source/job-logo.jpg" alt="job-logo" />
+                    <img src={(job.owner!=null && job.owner.photo!=null) ?job.owner.photo:'job-logo.jpg'} alt="job-logo" />
                   </div>
                   <div className="jobleftInfo">
                     <div id="jname">
-                      <a href={job.url || "#"}>{job.role || "J-Role-Not-Mentioned"}</a>
+                      <a href={job.url || "#"}>{job.title || "J-Role-Not-Mentioned"}</a>
                     </div>
-                    <p><i className="fa-solid fa-location-dot location-logo"></i>{job.location || "-----------"}</p>
+                    <p><i className="fa-solid fa-location-dot location-logo"></i>{job.locationAddress || "-----------"}</p>
                   </div>
                 </div>
                 <div className="jobright">
@@ -137,7 +147,7 @@ const BrowsJobs = () => {
                   <a className="applyBtn" href={job.url || "#"}>Apply Now</a>
                 </div>
               </div>
-            ))}
+            ))} 
 
             <div className="j-btns">
               <button className="j-prevbtn" onClick={() => setCount(count - 4)} disabled={count <= 0}>

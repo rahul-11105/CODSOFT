@@ -77,6 +77,10 @@
     width:auto;
     border: none;
     background: transparent;
+    color: #AAB1B7;
+}
+.f1-inp:focus{
+    outline: none;
 }
 .f1-btn{
     width:auto;

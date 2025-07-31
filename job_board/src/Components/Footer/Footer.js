@@ -2,6 +2,17 @@ import React from 'react'
 import "./footer.css";
 
 export default function Footer() {
+    function handleSubscribe (){
+        const inpdata = document.querySelector('.f1-inp');
+        if(inpdata.value.toLowerCase().includes('@gmail.com')){
+            alert('Congrates..! connected with us successfully.');
+            inpdata.value = '';
+        }
+        else {
+            alert('please enter an valid email');
+        }
+        
+    }
   return (
     <>
         <div className='footer'>
@@ -14,7 +25,7 @@ export default function Footer() {
                         <a className='F-a' href="#"><i class="fa-brands fa-facebook"></i></a>
                         <a className='F-a' href="#"><i class="fa-brands fa-google-plus"></i></a>
                         <a className='F-a' href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a className='F-a' href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a className='F-a' href="https://www.instagram.com/rahul_l_11105/"><i class="fa-brands fa-square-instagram"></i></a>
                         
                     </div>
                 </div>
@@ -35,7 +46,7 @@ export default function Footer() {
                                 type="text"
                                 placeholder="Enter your mail"
                             />
-                            <button className="f1-btn">Subscribe</button>
+                            <button className="f1-btn" onClick={handleSubscribe}>Subscribe</button>
                         </div>
                         <p>Esteem spirit temper too say adieus who direct esteem esteems luckily.</p>
 

@@ -1,9 +1,12 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import UserContext from "./UserContext";
 
 const UserProvider = ({children})=>{
     const [user, setUser] = useState({ name: "Rahul", age: 20 });
     const [Auth,setAuth] = useState(false);
+    
+    
+
     const [jobData,setJobData] = useState([
                                                                                                 {
                                                                                                     "id": "XWxW8kn",
@@ -1789,6 +1792,24 @@ const UserProvider = ({children})=>{
                                                                                                     "source": "Cryptocurrencyjobs"
                                                                                                 }
                                             ]);
+
+
+    
+     useEffect(() => {
+        async function getJob() {
+          try {
+            const res = await fetch('https://api.joinrise.io/api/v1/jobs/public?page=1&limit=20&sort=desc&sortedBy=createdAt&jobLoc=');
+            const data = await res.json();
+            console.log(data.result.jobs);
+            setJobData(data.result.jobs);
+          } catch (err) {
+            console.error('Error fetching jobs:', err);
+          }
+        }
+    
+        getJob();
+      }, []);
+
     const checkAuth = async () => {
         try {
             const res = await fetch("http://localhost:8080/checkAuth", {
