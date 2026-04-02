@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import './contact.css';
-import Nav from '../Navbar/Nav';
+import Nav from '../Navbar/Nav.js';
 import Footer from '../Footer/Footer.js';
 import emailjs from 'emailjs-com';
 

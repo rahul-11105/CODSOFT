@@ -7,6 +7,8 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const {setuser, getuser} = require("./Authenticate/userAuth");
 
+require("dotenv").config();
+
 
 //middlewares;
 app.use(express.json());
@@ -23,7 +25,7 @@ app.use(cookieParser());
 //connection;
 const connect = require("./connection/connectToDB");
 const user = require("./Model/usermodel"); 
-connect("mongodb+srv://rahullokhande:rahul11105@cluster0.wngig4w.mongodb.net/job_portal")
+connect(process.env.MONGO_URI)
 .then(()=>{
     console.log("DB connected Successfully");
 })

@@ -5,6 +5,9 @@ import Footer from "../Footer/Footer";
 import data from "./Json_Data";
 import UserContext from "../Context/UserContext"
 
+const API = process.env.REACT_APP_API_URL;
+
+
 const BrowsJobs = () => {
   const [count, setCount] = useState(0);
   const {jobData}= useContext(UserContext);
@@ -18,11 +21,10 @@ const BrowsJobs = () => {
   });
 
 
-
   useEffect(() => {
     async function getJob() {
       try {
-        const res = await fetch('https://api.joinrise.io/api/v1/jobs/public?page=1&limit=20&sort=desc&sortedBy=createdAt&jobLoc=');
+        const res = await fetch(API);
         const data = await res.json();
         console.log(data.result.jobs);
         setJobs(data.result.jobs);
