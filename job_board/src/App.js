@@ -1,4 +1,3 @@
-import Nav from './Components/Navbar/Nav';
 import Main from "./Components/Header/Main"
 import Category from './Components/CategorySearch/Category';
 import PopulerCategory from './Components/PopulerCategory/PopulerCategory';

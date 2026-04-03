@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import "./browsjobs.css";
 import Nav from "../Navbar/Nav";
 import Footer from "../Footer/Footer";
-import data from "./Json_Data";
 import UserContext from "../Context/UserContext"
 
 const API = process.env.REACT_APP_API_URL;

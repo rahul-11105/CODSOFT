@@ -44,9 +44,10 @@ const Contact = () => {
             width="100%"
             height="450"
             style={{ border: 0, borderRadius: 10 }}
-            allowFullScreen=""
+            allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="Google Map Location"
           ></iframe>
         </div>
 

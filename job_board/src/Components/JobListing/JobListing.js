@@ -10,7 +10,7 @@ const JobListing = () => {
 const {checkAuth,Auth} = useContext(UserContext);
 useEffect(() => {
   checkAuth();
-}, []);
+}, [checkAuth]);
 
   return ( 
     <div className="joblistingContainer">

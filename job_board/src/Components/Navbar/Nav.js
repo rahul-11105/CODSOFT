@@ -12,7 +12,7 @@ const location = useLocation();
 
 useEffect(()=>{
   checkAuth();
-},[]); 
+},[checkAuth]); 
 
 
 const handleLogOut = async()=>{
