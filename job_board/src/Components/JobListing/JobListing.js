@@ -28,7 +28,7 @@ useEffect(() => {
               <div className="job">
                             <div className="jobleft">
                                 <div className="jobLogo">
-                                    <img src= {job.owner!=null?job.owner.photo:"source/job-logo.jpg"}/>
+                                    <img src= {job.owner!=null?job.owner.photo:"source/job-logo.jpg"} alt='j-logo'/>
                                 </div>
                                 <div className="jobleftInfo">
                                 <div id="jname">
@@ -40,7 +40,7 @@ useEffect(() => {
                                 </div>
                             </div>
                             <div className="jobright">
-                                <a className='heart' href="#"><i class="fa-regular fa-heart"></i></a>
+                                <p className='heart'><i class="fa-regular fa-heart"></i></p>
                                 <a className='applyBtn' href={(job?.url==null?"#":job.url)}>Apply Now</a>
                             </div>
               </div>

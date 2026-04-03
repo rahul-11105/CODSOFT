@@ -22,9 +22,9 @@ export default function Footer() {
                     <p>rahullokhande11105@gmail.com</p>
                     <p>+91 7499916161</p>
                     <div className='F-icon'>
-                        <a className='F-a' href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a className='F-a' href="#"><i class="fa-brands fa-google-plus"></i></a>
-                        <a className='F-a' href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <p className='F-a'><i class="fa-brands fa-facebook"></i></p>
+                        <a className='F-a' href="mailto:rahullokhande11105@gmail.com?subject=Job Inquiry"><i class="fa-brands fa-google-plus"></i></a>
+                        <a className='F-a' href="https://x.com/rahullokha90999"><i class="fa-brands fa-twitter"></i></a>
                         <a className='F-a' href="https://www.instagram.com/rahul_l_11105/"><i class="fa-brands fa-square-instagram"></i></a>
                         
                     </div>

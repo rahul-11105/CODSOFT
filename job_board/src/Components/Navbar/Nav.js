@@ -46,7 +46,7 @@ const handleLogOut = async()=>{
     <>
     <nav className='navbar'>
       <div className='logo'>
-      <img className='logoImg' src="/source/logo.png" alt="logo" />
+      <img className='logoImg' src="/source/logo.png" alt="logo"/>
       </div>
 
       <div className='navigation'>
@@ -56,7 +56,7 @@ const handleLogOut = async()=>{
           <li><Link className='li' to="/contact">Contact</Link></li>
           </ul>
       </div>
-      <img src="/source/mobile_menu.png" className="mobile_menu"  onClick={()=>{setShow(!show)}}/>
+      <img src="/source/mobile_menu.png" className="mobile_menu"  onClick={()=>{setShow(!show)}} alt='img'/>
       <div className="mobileNavigator" style={{ display: show ? "flex" : "none" }}>
  
             <ul className='links'>
@@ -72,7 +72,7 @@ const handleLogOut = async()=>{
       </div>
       <div className='jobPost'>
         {
-          Auth?(<button onClick={handleLogOut} className='logOutBtn'><img className='login_img' src='source/log-out_10065804.png'/>LogOut</button>):(location.pathname!='/login'?<Link className='loginBtn' to="/login"><img className='login_img' src='source/log_10068669.png'/>Login</Link>:<Link className='loginBtn' to="/"><img className='login_img' src='source/left-arrow (1).png'/>Back</Link>)
+          Auth?(<button onClick={handleLogOut} className='logOutBtn'><img className='login_img' src='source/log-out_10065804.png' alt='login-img'/>LogOut</button>):(location.pathname!=='/login'?<Link className='loginBtn' to="/login"><img className='login_img' src='source/log_10068669.png' alt='login-img'/>Login</Link>:<Link className='loginBtn' to="/"><img className='login_img' src='source/left-arrow (1).png' alt='login-img'/>Back</Link>)
         }
           
       </div>

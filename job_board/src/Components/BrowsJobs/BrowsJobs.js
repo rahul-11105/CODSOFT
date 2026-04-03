@@ -145,7 +145,7 @@ const BrowsJobs = () => {
                   </div>
                 </div>
                 <div className="jobright">
-                  <a className="heart" href="#"><i className="fa-regular fa-heart"></i></a>
+                  <p className="heart" ><i className="fa-regular fa-heart"></i></p>
                   <a className="applyBtn" href={job.url || "#"}>Apply Now</a>
                 </div>
               </div>
