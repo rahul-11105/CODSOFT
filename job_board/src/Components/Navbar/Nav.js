@@ -19,7 +19,7 @@ const handleLogOut = async()=>{
   
   try {
     if(window.confirm('logged out successfully')){
-    const res = await fetch('http://localhost:8080/logout',{
+    const res = await fetch('https://job-portal-backend-213z.onrender.com/logout',{
       method:'get',
       credentials:'include',
     });

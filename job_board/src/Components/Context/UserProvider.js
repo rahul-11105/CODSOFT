@@ -1812,7 +1812,7 @@ const UserProvider = ({children})=>{
 
     const checkAuth = async () => {
         try {
-            const res = await fetch("http://localhost:8080/checkAuth", {
+            const res = await fetch("https://job-portal-backend-213z.onrender.com/checkAuth", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
