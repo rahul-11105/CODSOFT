@@ -27,7 +27,7 @@ function SignUp() {
     }
 
     try {
-      const response = await fetch('https://job-portal-backend-213z.onrender.com/signup', {
+      const response = await fetch("https://job-portal-backend-213z.onrender.com/signup", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

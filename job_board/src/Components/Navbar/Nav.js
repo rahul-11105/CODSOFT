@@ -12,14 +12,14 @@ const location = useLocation();
 
 useEffect(()=>{
   checkAuth();
-},[]);
+},[]); 
 
 
 const handleLogOut = async()=>{
   
   try {
     if(window.confirm('logged out successfully')){
-    const res = await fetch('https://job-portal-backend-213z.onrender.com/logout',{
+    const res = await fetch("https://job-portal-backend-213z.onrender.com/logout",{
       method:'get',
       credentials:'include',
     });
