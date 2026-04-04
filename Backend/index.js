@@ -13,9 +13,14 @@ require("dotenv").config();
 //middlewares;
 app.use(express.json());
 app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true
+  origin: [
+    "http://localhost:3000",
+    "https://jobboard1-one.vercel.app",
+    "https://jobboard-eight-gamma.vercel.app",
+    "https://jobboard-git-main-rahul-11105s-projects.vercel.app"
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 }));
   app.options("*", cors());
 app.use(express.urlencoded({extended:true}));
